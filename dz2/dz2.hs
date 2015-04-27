@@ -1,18 +1,18 @@
 module Dz where
 
-fibbTail :: Int -> Int
-fibbTail n
+fibb :: Int -> Int
+fibb n
 	| n == 0 = 0
-	| otherwise = fibAux n 1 0
-				  where fibAux n result previous = if n /= 0 
-				  								   then fibAux (n - 1) ( result + previous ) result
-					    						   else result
+	| otherwise = fibTail n 1 0
+				  where fibTail n result previous = if n /= 0 
+				  								    then fibTail (n - 1) ( result + previous ) result
+					    						    else result
 
 factorial :: Int -> Int
-factorial n = helper 1 n
-			  where helper acc n = if n > 1
-								   then helper (acc * n) (n - 1)
-								   else acc
+factorial n = factTail 1 n
+			  where factTail result n = if n > 1
+								   then factTail (result * n) (n - 1)
+								   else result
 
 akk :: Int -> Int -> Int
 akk m n
