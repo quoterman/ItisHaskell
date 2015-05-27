@@ -1,10 +1,4 @@
 
-
---func :: [Int] -> [Int]
---func [] = []
---func (x:xs) = [ y + x | y <- xs  ]
-
-
 evenSum :: Integral a => [a] -> a
 
 evenSum l = accumSum 0 l
